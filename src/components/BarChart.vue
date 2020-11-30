@@ -1,14 +1,15 @@
 <script>
 import { Bar, mixins } from 'vue-chartjs'
+import 'chartjs-plugin-annotation'
 
 const { reactiveProp } = mixins
 
 export default {
   extends: Bar,
   mixins: [reactiveProp],
-  props: ['data', 'options'],
+  props: ['chartData', 'options'],
   mounted () {
-    this.renderChart(this.data, this.options)
+    this.renderChart(this.chartData, this.options)
   }
 }
 </script>
